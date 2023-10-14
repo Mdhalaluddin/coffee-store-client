@@ -1,5 +1,5 @@
 import { AiOutlineDelete, AiFillEdit, AiOutlineFundView } from 'react-icons/Ai';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const CoffeeCard = ({ coffee }) => {
@@ -17,7 +17,7 @@ const CoffeeCard = ({ coffee }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/coffee/${_id}`,{
+                fetch(`http://localhost:5000/coffee/${_id}`, {
                     method: 'DELETE',
 
                 })
@@ -52,9 +52,9 @@ const CoffeeCard = ({ coffee }) => {
                     <div className="card-actions justify-end">
                         <div className="btn-group btn-group-vertical  space-y-2 text-lg">
                             <button className="btn bg-[#D2B48C]"><AiOutlineFundView></AiOutlineFundView></button>
-                            <NavLink to={`updateCoffee/${_id}`}>
+                            <Link to={`updateCoffee/${_id}`}>
                                 <button className="btn bg-[#3C393B]"><AiFillEdit></AiFillEdit></button>
-                            </NavLink>
+                            </Link>
                             <button onClick={() => handleDelete(_id)} className="btn bg-[#EA4744]"><AiOutlineDelete></AiOutlineDelete></button>
                         </div>
                     </div>

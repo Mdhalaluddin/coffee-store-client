@@ -35,9 +35,6 @@ const AddCoffee = () => {
                     })
                 }
             })
-
-
-
     }
     return (
         <div className="  rounded-lg mt-10 ">

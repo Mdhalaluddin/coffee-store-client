@@ -1,9 +1,10 @@
 import { AiOutlineDelete, AiFillEdit, AiOutlineFundView } from 'react-icons/Ai';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Swal from 'sweetalert2';
 
 const CoffeeCard = ({ coffee }) => {
-    const { name, supplier, category, chef, teste, details, photo, _id } = coffee;
+    const { supplier, category, chef,  _id } = coffee;
 
     const handleDelete = _id => {
         console.log(_id);
@@ -64,4 +65,7 @@ const CoffeeCard = ({ coffee }) => {
     );
 };
 
+CoffeeCard.propTypes ={
+    coffee: PropTypes.array
+}
 export default CoffeeCard;
